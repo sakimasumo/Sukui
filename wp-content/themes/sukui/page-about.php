@@ -3,7 +3,7 @@
     <section class="breadcrumb container">
         <ul class="breadcrumb__list">
             <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span></a></li>
-            <li class="breadcrumb__item"><?php wp_title(); ?></li>
+            <li class="breadcrumb__item">About</li>
         </ul>
     </section>
     <!-- タイトルエリア -->

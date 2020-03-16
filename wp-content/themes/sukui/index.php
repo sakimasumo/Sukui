@@ -53,12 +53,22 @@
         </h2>
         <div class="news__box">
           <dl class="news__list">
-            <dt class="news__date">2020.4.20</dt>
-            <dd class="news__contents">リップ新色決定です！</dd>
-            <dt class="news__date">2020.3.1</dt>
-            <dd class="news__contents">ホワイトデーギフトキャンペーン♪</dd>
-            <dt class="news__date">2020.2.1</dt>
-            <dd class="news__contents">バレンタインは自分へのごほうびを…</dd>
+          <?php
+                $args = array(
+                    "post_type" => "news",
+                    "post_status" => "publish",
+                    "posts_per_page" => 3
+                );
+                $customPosts = get_posts($args);
+                ?>
+                <?php if ($customPosts): ?>
+                    <?php foreach ($customPosts as $post): setup_postdata($post);?>
+            <dt class="news__date"><?= get_post_time("Y.m.d"); ?></dt>
+            <dd class="news__contents"><?php the_title(); ?></dd>
+                <?php endforeach; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+
           </dl>
           <a href="<?php echo get_page_link(15); ?>" class="news__button"
             ><img src="<?= get_template_directory_uri(); ?>/images/more.png" alt=""
@@ -71,24 +81,27 @@
           <img src="<?= get_template_directory_uri(); ?>/images/ranking-s.png" alt="" />
         </h2>
         <ul class="rank__list">
+        <ul class="rank__list">
+        <?php
+                $args = array(
+                    "post_type" => "ranking",
+                    "post_status" => "publish",
+                    "post_per_page" => -1
+                );
+                $customPosts = get_posts($args);
+                ?>
+                <?php if ($customPosts): ?>
+                    <?php foreach ($customPosts as $post): setup_postdata($post);?>
           <li class="rank__item">
-            <img src="<?= get_template_directory_uri(); ?>/images/primer.jpg" alt="" />
-            <div class="rank__num"><span>1</span></div>
-            <p class="rank__caption">aaaaaa</p>
-            <p class="rank__price">￥0000（taxin）</p>
+            <?php the_post_thumbnail('ranking_img'); ?>
+            <div class="rank__num"><span><?= post_custom('ranknum'); ?></span></div>
+            <p class="rank__caption"><?php the_title(); ?></p>
+            <p class="rank__price">￥<?= number_format(post_custom('price')) ?>(税込)</p>
           </li>
-          <li class="rank__item">
-            <img src="<?= get_template_directory_uri(); ?>/images/cleansing.jpg" alt="" />
-            <div class="rank__num"><span>2</span></div>
-            <p class="rank__caption">bbbbbb</p>
-            <p class="rank__price">￥0000（taxin）</p>
-          </li>
-          <li class="rank__item">
-            <img src="<?= get_template_directory_uri(); ?>/images/foundation.jpg" alt="" />
-            <div class="rank__num"><span>3</span></div>
-            <p class="rank__caption">aaaaaa</p>
-            <p class="rank__price">￥0000（taxin）</p>
-          </li>
+                <?php endforeach; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata() ?>
+        </ul>
         </ul>
       </section>
     </main>

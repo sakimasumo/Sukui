@@ -405,7 +405,7 @@ footer {
   border: 1px solid #c2c2c2;
   height: 160px;
   margin-bottom: 120px;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
 }
 
 .news__list {
@@ -431,13 +431,13 @@ footer {
 
 .news__button {
   position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   right: 30px;
 }
 
 .news__button img {
   float: right;
-  height: 40px;
+  height: 30px;
   border: 3px solid #DB848D;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.15);
@@ -644,10 +644,6 @@ footer {
   border-bottom: 1px dotted #DB848D;
 }
 
-.newsbox__item:last-of-type {
-  border: none;
-}
-
 .newsbox__img {
   display: block;
   background-color: #FFF4F4;
@@ -683,6 +679,46 @@ footer {
 
 .newsbox__text {
   font-size: 1.4rem;
+}
+
+.page-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+
+.page-numbers li {
+  background-color: #DB848D;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid #DB848D;
+}
+
+.page-numbers li a {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #FFF4F4;
+}
+
+.page-numbers li span {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.current {
+  background-color: #FFF4F4;
+  color: #DB848D;
 }
 
 .storecategory__title {
@@ -760,7 +796,7 @@ footer {
 }
 
 .storebox__item {
-  width: 30%;
+  width: 360px;
 }
 
 .storebox__item__link {
@@ -785,16 +821,17 @@ footer {
 }
 
 .storebox__item__name {
-  height: 30px;
+  height: 25px;
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.0rem;
   font-weight: normal;
+  margin: 10px 0 0 0;
 }
 
 .storebox__item__price {
   height: 40px;
   text-align: center;
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   font-weight: normal;
 }
 
@@ -806,6 +843,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 80px;
 }
 
 .slider {
@@ -870,7 +908,7 @@ footer {
 }
 
 .shopbox__list {
-  padding: 20px;
+  padding: 20px 70px;
 }
 
 .shopbox__item {
@@ -894,11 +932,15 @@ footer {
 }
 
 .shopbox__item__address {
-  width: 500px;
+  width: 550px;
+}
+
+.shopbox__item__address p {
+  margin-bottom: 5px;
 }
 
 .shopbox__item__tel {
-  width: 300px;
+  width: 280px;
 }
 
 /*ボックス全体*/
@@ -956,10 +998,6 @@ footer {
   opacity: 1;
 }
 
-.accbox .accshow p {
-  margin: 15px 10px;
-}
-
 /*アイコンを入れ替える*/
 .cssacc:checked + label:before {
   content: '\f103';
@@ -990,7 +1028,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 20px;
+  margin: 20px 0 0 0;
   width: 650px;
   margin-right: auto;
   margin-left: auto;
@@ -1063,6 +1101,12 @@ footer {
 
 .contactbox__confirm:hover {
   opacity: 0.5;
+}
+
+.contactbox__warning {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 .contactconf {

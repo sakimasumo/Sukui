@@ -322,7 +322,7 @@ footer {
         border: 1px solid $line;
         height: 160px;
         margin-bottom: 120px;
-        padding: 30px 0;
+        padding: 30px 0 0 0;
     }
     &__list {
         width: 60%;
@@ -345,11 +345,11 @@ footer {
     }
     &__button {
         position: absolute;
-        bottom: 25px;
+        bottom: 10px;
         right: 30px;
         img{
         float: right;
-        height: 40px;
+        height: 30px;
         border: 3px solid $acce;
         border-radius: 5px;
         box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
@@ -518,9 +518,6 @@ footer {
         padding: 30px;
         border-bottom: 1px dotted $acce;
     }
-    &__item:last-of-type {
-        border: none;
-    }
     &__img {
         display: block;
         background-color: $base;
@@ -546,6 +543,37 @@ footer {
     &__text {
         font-size: 1.4rem;
     }
+}
+
+.page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+    li {
+        background-color: $acce;
+        width: 30px;
+            height: 30px;
+        margin: 5px;
+        border: 1px solid $acce;
+        
+        a{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: $base;
+        }
+        span {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    }
+}
+.current {
+    background-color: $base;
+    color: $acce;
 }
 // storeページ
 // メインエリア
@@ -590,7 +618,7 @@ footer {
         margin-bottom: 60px;
     }
     &__item {
-        width: 30%;
+        width: 360px;
         &__link {
             display: block;
         }
@@ -606,15 +634,16 @@ footer {
             }
             }
         &__name {
-            height: 30px;
+            height: 25px;
             text-align: center;
-            font-size: 2.4rem;
+            font-size: 2.0rem;
             font-weight: normal;
+            margin: 10px 0 0 0;
         }
         &__price {
             height: 40px;
             text-align: center;
-            font-size: 2.0rem;
+            font-size: 1.8rem;
             font-weight: normal;
         }
 }
@@ -627,6 +656,7 @@ footer {
     margin-top: 80px;
     display: flex;
     justify-content: center;
+    margin-bottom: 80px;
 }
 
 .slider {
@@ -689,7 +719,7 @@ footer {
     margin-bottom: 80px;
     
     &__list {
-        padding: 20px;
+        padding: 20px 70px;
     }
     &__item {
         color: $text;
@@ -704,10 +734,13 @@ footer {
             width: 300px;
         }
         &__address {
-            width: 500px;
+            width: 550px;
+            p {
+                margin-bottom: 5px;
+            }
         }
         &__tel {
-            width: 300px;
+            width: 280px;
         }
     }
 }
@@ -758,8 +791,6 @@ footer {
     background: $base;
     opacity: 1;
 }
-.accbox .accshow p {
-    margin: 15px 10px}
 /*アイコンを入れ替える*/
 .cssacc:checked + label:before {
     content: '\f103';
@@ -786,7 +817,7 @@ footer {
     &__list {
         display: flex;
         justify-content: space-between;
-        margin: 20px;
+        margin: 20px 0 0 0;
         width: 650px;
         margin-right:auto;
         margin-left: auto;
@@ -850,6 +881,11 @@ footer {
         &:hover {
             opacity: 0.5;
         }
+    }
+    &__warning {
+        color: red;
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
     }
 

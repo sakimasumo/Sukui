@@ -1,4 +1,12 @@
 <?php get_header(); ?>
+<!-- パンくずリスト -->
+<section class="breadcrumb container">
+        <ul class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span></a></li>
+            <li class="breadcrumb__item"><a href="<?php echo home_url('/store'); ?>"><span>OnlineShop</span></a></li>
+            <li class="breadcrumb__item">Products</li>
+        </ul>
+    </section>
     <!-- メインエリア -->
     <main>
       <section class="storesinglebox container">
@@ -25,11 +33,13 @@
                   title="Select"
                 >
                   <option>選択してください</option>
-                  <option value="">01</option>
-                  <option value="">02</option>
-                  <option value="">03</option>
-                  <option value="">04</option>
-                  <option value="">05</option>
+                <?php 
+                  $color_min = post_custom("color_min");
+                  $color_max = post_custom("color_max");
+                ?>
+                <?php for ($i=$color_min; $i <= $color_max ; $i++): ?>
+                  <option value=""><?php echo $i ?></option>
+                <?php endfor; ?>
                 </select>
               </div>
               <div class="quantity form-group">
