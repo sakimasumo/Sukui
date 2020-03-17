@@ -92,12 +92,14 @@
                 ?>
                 <?php if ($customPosts): ?>
                     <?php foreach ($customPosts as $post): setup_postdata($post);?>
-          <li class="rank__item">
+          <a href="product/<?= post_custom('url')?>">
+            <li class="rank__item">
             <?php the_post_thumbnail('ranking_img'); ?>
             <div class="rank__num"><span><?= post_custom('ranknum'); ?></span></div>
             <p class="rank__caption"><?php the_title(); ?></p>
             <p class="rank__price">￥<?= number_format(post_custom('price')) ?>(税込)</p>
           </li>
+          </a>
                 <?php endforeach; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata() ?>
@@ -106,9 +108,9 @@
       </section>
     </main>
     <!-- トップに戻るボタン -->
-    <div class="topbtn">
-      <p>
-        <a href="<?php home_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/images/topbtn.png" alt=""/></a>
+    <div>
+      <p class="topbtn">
+        <a href="<?php echo home_url(); ?>"><i class="fas fa-arrow-circle-up"></i></a>
       </p>
     </div>
 <?php get_footer(); ?>

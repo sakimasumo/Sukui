@@ -1,25 +1,21 @@
 <?php
 session_start();
 require_once "util.inc.php";
-require_once "libs/qd/qdsmtp.php";
-require_once "libs/qd/qdmail.php";
+require_once "vendor/autoload.php";
+require_once "settings.php";
 
 //セッションが登録されている場合は読み出す
 if (isset($_SESSION["contact"])) {
   $contact = $_SESSION["contact"];
-  $name01 = $contact["name01"];
-  $name02 = $contact["name02"];
-  $kana01 = $contact["kana01"];
-  $kana02 = $contact["kana02"];
-  $tel = $contact["tel"];
-  $mail = $contact["mail"];
+  $name01  = $contact["name01"];
+  $name02  = $contact["name02"];
+  $kana01  = $contact["kana01"];
+  $kana02  = $contact["kana02"];
+  $tel     = $contact["tel"];
+  $mail    = $contact["mail"];
   $content = $contact["content"];
   $details = $contact["details"];
-  //CFR対策
-  if ($token !== getToken()) {
-    header("Location: ../contact");
-    exit;
-  }
+  
 }
 else {
   //不正なアクセス
@@ -27,72 +23,67 @@ else {
   header("Location: ../contact");
   exit;
 }
+//--------------------
+// 「送信」ボタン
+//--------------------
 
-//送信ボタン
-if (isset($_POST["send"])) {
-  // 管理者へメール送信
-  $body = <<<EOT
-■お名前
-{$name01}{$name02}
 
-■フリガナ
-{$kana01}{$kana02}
-
-■メールアドレス
-{$mail}
-
-■電話番号
-{$tel}
-
-■お問い合わせ内容
-{$content}
-
-■お問い合わせ内容
-{$details}
-
-EOT;
-  $mail = new Qdmail();
-  $mail->errorDisplay(false);
-  $mail->smtpObject()->error_display = false;
-  // 基本設定
-  $mail->from("zd3h10@sim.zdrv.com", "Sukui Web");
-  $mail->to("zd3h10@sim.zdrv.com", "Sukui 管理者");
-  $mail->subject("Crescent Shoes 問い合わせ");
-  $mail->text($body);
-  // SMTP用設定
-  $param = array(
-    "host"     => "w1.sim.zdrv.com",
-    "port"     => 25,
-    "from"     => "zd3h10@sim.zdrv.com",
-    "protocol" => "SMTP",
+try {
+  if (isset($_POST["send"])){
+    $body = <<<EOT
+    ・お名前
+    {$name01} {$name02}
+    ・フリガナ
+    {$kana01} {$kana02}
+    ・電話番号
+    {$tel}
+    ・メールアドレス
+    {$mail}
+    ・お問い合わせ内容
+    {$content}
+    ・お問い合わせ詳細
+    {$details}
+    EOT;
+  $transport = new Swift_SmtpTransport(
+    SMTP_HOST, SMTP_PORT, SMTP_PROTOCOL
   );
-  $mail->smtp(TRUE);
-  $mail->smtpServer($param);
-  // 送信
-  $flag = $mail->send();
-  if ($flag == TRUE) {
-    // 送信成功
-    // セッション変数を破棄
+  $transport->setUsername(GMAIL_ADMIN);
+  $transport->setPassword(GMAIL_APPPASS);
+  $mailer = new Swift_Mailer($transport);
+  
+  $message = new Swift_Message(MAIL_TITLE);
+  $message->setFrom(MAIL_FROM);
+  $message->setTo(MAIL_TO);
+  // メール本文にHTMLタグを使用
+  $message->setBody($body);
+  
+  $result = $mailer->send($message);
+  if ($result == true) {
+    //送信成功
+    //セッション変数を破棄
     unset($_SESSION["contact"]);
-    // 完了画面へ移動
-    header("Location: ../contact-done");
+    //完了画面へ移動
+    header("Location: ../contact/contact_done");
     exit;
+  }else{
+  //送信失敗
+  //エラー画面へ移動
+  //セッション変数は破棄しない
+  header("Location: ../contact/contact_error");
+  exit;
   }
-  else {
-    // 送信失敗
-    // エラー画面へ移動
-    // セッション変数は破棄しない
-    header("Location: ../contact-error");
-    exit;
-  }
+  //修正ボタンF
 }
-//修正ボタン
+} catch (Exception $e) {
+  echo $e -> getMessage();
+  exit;
+}
 if (isset($_POST["back"])) {
   //入力ページに戻る
-  $_SESSION["contact"]["contactOnly"] = true;
   header("Location: ../contact");
   exit;
 }
+  
 
 ?>
 
@@ -108,7 +99,7 @@ if (isset($_POST["back"])) {
     <main>
       <section class="container">
         <div class="contactconf">
-        <p class="contactconf__text">お問い合わせ内容をご確認いただき、よろしければ「送信」を押してください
+        <p class="contactconf__text">お問い合わせ内容をご確認いただき、よろしければ「送信」を押してください。
           <br>後日担当者より返信させていただきます。
         </p>
         <table class="contactconf__table">
@@ -140,7 +131,7 @@ if (isset($_POST["back"])) {
         <form action="" method="post">
           <div class="contactconf__btn">
           <input class="contactconf__done" type="submit" value="送信" name="send">
-          <input class="contactconf__return" type="submit" value="戻る" name="back">
+          <input class="contactconf__return" type="submit" value="修正" name="back">
         </div>
         </form>
       </div>

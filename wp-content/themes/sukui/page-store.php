@@ -2,7 +2,7 @@
     <!-- パンくずリスト -->
     <section class="breadcrumb container">
         <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span></a></li>
+            <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span> ></a></li>
             <li class="breadcrumb__item">OnlineStore</li>
         </ul>
     </section>
@@ -125,4 +125,10 @@
             </ul>
           </section>
     </main>
+    <!-- トップに戻るボタン -->
+    <div>
+      <p class="topbtn">
+        <a href="<?php echo home_url('/store');; ?>"><i class="fas fa-arrow-circle-up"></i></a>
+      </p>
+    </div>
 <?php get_footer(); ?>

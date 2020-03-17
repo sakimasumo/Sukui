@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 require_once "util.inc.php";
 
 // 変数初期化
@@ -34,20 +35,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name02  = $_POST["name02"];
     $kana01  = $_POST["kana01"];
     $kana02  = $_POST["kana02"];
+    $tel     = $_POST["tel"];
     $mail    = $_POST["mail"];
+    $content = $_POST["content"];
     $details = $_POST["details"];
     //名前のバリデーション
     if ($name01 === "" or $name02 === "") {
         $nameError = "※お名前を入力してください";
         $isValidated = false;
     }
-    //振り仮名のバリデーション
+    //フリガナのバリデーション
     if ($kana01 === "" or $kana02 === "") {
         $kanaError = "※フリガナを入力してください";
         $isValidated = false;
     }
     elseif (!preg_match("/^[ァ-ヶー 　]+$/u", $kana01) or !preg_match("/^[ァ-ヶー 　]+$/u", $kana02)) {
         $kanaError = "※全角カタカナで入力してください";
+        $isValidated = false;
+    }
+    //電話番号のバリデーション
+    if ($tel === "") {
+        $telError = "※フリガナを入力してください";
         $isValidated = false;
     }
     //メールアドレスのバリデーション
@@ -59,34 +67,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mailError = "※メールアドレスの形式が正しくありません";
         $isValidated = false;
     }
+    //問合せ内容のバリデーション
+    if ($content === "選択してください") {
+        $contentError = "※お問い合わせ内容を選択してください";
+        $isValidated = false;
+    }
     //問合せ詳細のバリデーション
     if ($details === "") {
-        $detailsError = "※お問い合わせ内容を入力してください";
+        $detailsError = "※お問い合わせ詳細を入力してください";
         $isValidated = false;
     }
 
     //エラーがなければ確認画面へ移動
     if ($isValidated == true) {
         $contact = array(
-            "name01" => $name01,
-            "name02" => $name02,
-            "kana01" => $kana01,
-            "kana02" => $kana02,
-            "mail"   => $mail,
+            "name01"  => $name01,
+            "name02"  => $name02,
+            "kana01"  => $kana01,
+            "kana02"  => $kana02,
+            "tel"     => $tel,
+            "mail"    => $mail,
+            "content" => $content,
             "details" => $details
         );
         $_SESSION["contact"] = $contact;
-        header("Location :contact_conf");
+        header("Location: contact/contact_conf");
         exit;
+
+        
     }
 }
-
 ?>
 <?php get_header(); ?>
     <!-- パンくずリスト -->
     <section class="breadcrumb container">
         <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span></a></li>
+            <li class="breadcrumb__item"><a href="<?php echo home_url(); ?>"><span>Top</span> ></a></li>
             <li class="breadcrumb__item">Contact</li>
         </ul>
     </section>
@@ -119,6 +135,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <dt class="contactbox__label"><label>電話番号</label></dt>
                     <dd class="contactbox__tel"><input type="tel" name="tel" value="<?= h($tel)?>"></dd>
                 </dl>
+                <?php if (isset($telError)): ?>
+                    <div class="contactbox__warning"><?= $telError ?></div>
+                <?php endif; ?>
                 <dl class="contactbox__list">
                     <dt class="contactbox__label"><label>メールアドレス</label></dt>
                     <dd class="contactbox__mail"><input type="mail" name="mail" placeholder=" sample@sample.com" value="<?= h($mail)?>"></dd>
@@ -129,15 +148,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <dl class="contactbox__list">
                     <dt class="contactbox__label"><label>お問い合わせ内容</label></dt>
                     <dd class="contactbox__content">
-                        <select name="content" id="" value="<?= h($content)?>">
-                            <option >選択してください</option>
-                            <option>商品について</option>
-                            <option>ご注文について</option>
-                            <option>サイトのご利用方法</option>
-                            <option>その他</option>
+                        <select name="content">
+                            <option value="選択してください">選択してください</option>
+                            <option value="商品について" <?php if($content === "商品について") echo 'selected'; ?>>商品について</option>
+                            <option value="ご注文について" <?php if($content === "ご注文について") echo 'selected'; ?>>ご注文について</option>
+                            <option value="サイトのご利用方法" <?php if($content === "サイトのご利用方法") echo 'selected'; ?>>サイトのご利用方法</option>
+                            <option value="その他" <?php if($content === "その他") echo 'selected'; ?>>その他</option>
                         </select>
                     </dd>
                 </dl>
+                <?php if (isset($contentError)): ?>
+                    <div class="contactbox__warning"><?= $contentError ?></div>
+                <?php endif; ?>
                 <dl class="contactbox__list">
                     <dt class="contactbox__label"><label>お問い合わせ詳細</label></dt>
                     <textarea class="contactbox__tarea" name="details" id="" cols="20"><?= h($details); ?></textarea>
