@@ -1,7 +1,5 @@
 <?php
-$lifetime = 600;
 session_start();
-setcookie(session_name(), session_id(), time() + $lifetime);
 require_once "util.inc.php";
 
 // 変数初期化
@@ -92,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 				exit;
     }
 }
+var_dump($contact);
 ?>
 <?php get_header(); ?>
     <!-- パンくずリスト -->

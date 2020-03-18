@@ -47,7 +47,7 @@ div.footer_explanation {
 	margin-bottom: 10px;
 }
 
-#cart th, 
+#cart th,
 #cart td {
 	border-top-width: 1px;
 	border-right-width: 1px;
@@ -111,50 +111,50 @@ div.footer_explanation {
 #cart th.subtotal {
 	text-align: center;
 	vartical-align: middle;
-} 
+}
 
 #cart .num {
 	white-space: nowrap;
 	width: 40px;
 	text-align: center;
-} 
+}
 
 #cart .thumbnail {
 	white-space: nowrap;
 	width: 70px;
 	text-align: center;
-} 
+}
 
 #cart .price,
 #cart .unitprice {
 	white-space: nowrap;
 	width: 80px;
 	text-align: right;
-} 
+}
 
 #cart .quantity {
 	white-space: nowrap;
 	width: 65px;
 	text-align: center;
-} 
+}
 
 #cart .subtotal {
 	white-space: nowrap;
 	width: 100px;
 	text-align: right;
-} 
+}
 
 #cart .stoc {
 	white-space: nowrap;
 	width: 90px;
 	text-align: center;
-} 
+}
 
 #cart .action {
 	white-space: nowrap;
 	width: 60px;
 	text-align: center;
-} 
+}
 
 #cart #point_table {
 	width: 350px;
@@ -190,7 +190,7 @@ div.footer_explanation {
 /*********************************************************************/
 /* USCES Item single page style */
 span.price {
-	font-size: 140%;
+	font-size: 1.8rem;
 	font-weight: bold;
 	color: #ED5B14;
 	margin: 0px;
@@ -257,7 +257,7 @@ dl.itemGpExp li {
 	text-align: left;
 }
 #itempage .field .field_price {
-	font-size: 140%;
+	font-size: 1.8rem;
 	font-weight: bold;
 	color: #ED5B14;
 	margin: 0px;
@@ -282,7 +282,6 @@ dl.itemGpExp li {
 }
 
 #itempage .exp {
-	margin-bottom: 10px;
 }
 
 *:first-child+html #itempage .exp {
@@ -302,9 +301,11 @@ dl.itemGpExp li {
 	width: 200px;
 }
 */
+
 #itempage .itemimg img {
 	margin: 0 auto;
 	padding: 0px;
+	padding-top: 10px;
 }
 
 #itempage .itemsubimg {
@@ -330,7 +331,6 @@ dl.itemGpExp li {
 }
 
 #itempage table.skusingle td {
-	padding-top: 3px;
 	padding-right: 10px;
 	padding-bottom: 3px;
 	padding-left: 0px;
@@ -341,17 +341,18 @@ dl.itemGpExp li {
 	padding: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	margin-left: 0px;
 	width: 100%;
-	border: 2px solid #CCCCCC;
+	border: 1px solid #CCCCCC;
 	border-collapse: collapse;
+	font-size: 1.2rem;
 }
 
 #itempage table.skumulti th {
-	background-color: #E6E6E6;
+	color:#DB848D;
+	background-color: #FFF4F4;
 	text-align: center;
-	padding: 3px;
 	border-right-width: 1px;
 	border-bottom-width: 1px;
 	border-right-style: solid;
@@ -370,7 +371,6 @@ dl.itemGpExp li {
 }
 
 #itempage table.skumulti td {
-	padding: 3px;
 	border-right-width: 1px;
 	border-bottom-width: 2px;
 	border-right-style: solid;
@@ -716,7 +716,7 @@ div.usccart_navi li.usccart_confirm {
 	width: 50%;
 	margin-right: 3px;
 }
-#customer-info .customer_form input[type="checkbox"], 
+#customer-info .customer_form input[type="checkbox"],
 #customer-info .customer_form input[type="radio"] {
 	width: auto;
 	margin-right: 3px;
@@ -1379,7 +1379,7 @@ div.usccart_navi li.usccart_confirm {
 	font-style: normal;
 	color: #ff0000;
 }
-table.retail td, 
+table.retail td,
 #retail_table td {
 	white-space: normal;
 	word-break:break-all;

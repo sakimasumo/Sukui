@@ -826,7 +826,7 @@ footer {
 }
 
 .storesinglebox {
-  margin-top: 80px;
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -844,7 +844,7 @@ footer {
 .detail {
   color: #222222;
   width: 45%;
-  display: block;
+  padding-top: 50px;
 }
 
 .detail__box {
@@ -889,6 +889,15 @@ footer {
   border: none;
   color: #eee;
   border: 1px solid #fff;
+}
+
+.item_name {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.singleitemimg, .notsingleitemimg {
+  margin-bottom: 40px;
 }
 
 .shopbox {

@@ -1,10 +1,9 @@
-<?php 
-$lifetime=600;
+<?php
 session_start();
-setcookie(session_name(),session_id(),time()+$lifetime);require_once "util.inc.php";
+require_once "util.inc.php";
 require_once "vendor/autoload.php";
 require_once "settings.php";
-
+//セッションが登録されている場合は読み出す
 if (isset($_SESSION["contact"])) {
   $contact = $_SESSION["contact"];
   $name01  = $contact["name01"];
@@ -83,6 +82,7 @@ if (isset($_POST["back"])) {
   exit;
 }
 ?>
+
 <?php get_header(); ?>
     <!-- パンくずリスト -->
     <section class="breadcrumb container">
