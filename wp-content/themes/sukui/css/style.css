@@ -707,6 +707,10 @@ footer {
   color: #DB848D;
 }
 
+.storecategory {
+  margin-bottom: 40px;
+}
+
 .storecategory__title {
   border-radius: 3px;
   background: #DB848D;
@@ -834,15 +838,13 @@ footer {
 
 .slider {
   display: block;
-  width: 48%;
-  margin-left: 100px;
+  width: 45%;
 }
 
 .detail {
   color: #222222;
+  width: 45%;
   display: block;
-  width: 48%;
-  float: right;
 }
 
 .detail__box {

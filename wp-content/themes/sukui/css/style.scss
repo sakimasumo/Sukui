@@ -56,7 +56,7 @@ a , a:visited{
 
 // ヘッダー
 .header {
-    
+
     background-color: $base;
 }
 
@@ -107,7 +107,7 @@ a , a:visited{
                 }
             }
         }
-        
+
     }
 
 .hnav {
@@ -169,7 +169,7 @@ a , a:visited{
     color: $acce;
     font-size: 6.4rem;
   }
-  
+
 
 // フッター
 footer {
@@ -322,7 +322,7 @@ footer {
         width: 100px;
         font-size: 2.0rem;
         color: $text;
-        
+
     }
     &__contents {
         margin-left: 200px;
@@ -365,7 +365,7 @@ footer {
 
     }
     &__item {
-        
+
         position: relative;
         img{
             border: solid 2px $line;
@@ -397,7 +397,7 @@ footer {
             font-size: 3.2rem;
             font-weight: bold;
         }
-        
+
 
     }
     &__caption {
@@ -432,7 +432,7 @@ footer {
             text-decoration: underline;
         }
     }
-    
+
     }
 
 
@@ -458,7 +458,7 @@ footer {
         left: 30px;
         }
     }
-    
+
 }
 // aboutページ
 // メインエリア
@@ -484,10 +484,10 @@ footer {
             text-align: center;
             letter-spacing: 5px;
             line-height: 3.0rem;
-            
+
         }
     }
-    
+
 }
 // newsページ
 // メインエリア
@@ -544,7 +544,7 @@ footer {
             height: 30px;
         margin: 5px;
         border: 1px solid $acce;
-        
+
         a{
             width: 30px;
             height: 30px;
@@ -565,13 +565,15 @@ footer {
 // storeページ
 // メインエリア
 .storecategory {
+				margin-bottom: 40px;
+
     &__title {
         @include title
 
     }
     &__list {
         display: flex;
-        justify-content: space-between;
+				justify-content: space-between;
     }
     &__item {
         img{
@@ -648,18 +650,16 @@ footer {
 
 .slider {
     display: block;
-    width: 48%;
-    margin-left: 100px;
+		width: 45%;
 
 }
 
 
 //商品詳細
 .detail {
-    color: $text;
+	color: $text;
+	width: 45%;
     display: block;
-    width: 48%;
-    float: right;
     &__box {
         margin: 90px 50px;
     }
@@ -704,7 +704,7 @@ footer {
 // メインエリア
 .shopbox {
     margin-bottom: 80px;
-    
+
     &__list {
         padding: 20px 70px;
     }
@@ -809,7 +809,7 @@ footer {
         margin-right:auto;
         margin-left: auto;
     }
-    
+
     &__label {
         width: 250px;
         padding-right: 20px;
@@ -908,7 +908,7 @@ footer {
     border: 1px solid $line;
     padding: 80px 200px;
     margin-bottom: 80px;
-    
+
     &__text {
         color: $text;
       letter-spacing: 0.2rem;
