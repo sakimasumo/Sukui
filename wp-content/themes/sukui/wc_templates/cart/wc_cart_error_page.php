@@ -8,13 +8,12 @@ get_header();
 ?>
 
 <div id="content" class="two-column">
-<div class="catbox">
+<div class="catbox container">
 
 <?php if (have_posts()) : usces_remove_filter(); ?>
 
 	<div class="post" id="wc_<?php usces_page_name(); ?>">
 
-		<h1 class="cart_page_title"><?php _e('Your order has not been completed', 'usces'); ?></h1>
 		<div class="entry">
 
 			<div id="error-page">
@@ -35,6 +34,5 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'cartmember' ); ?>
 
 <?php get_footer(); ?>

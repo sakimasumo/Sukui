@@ -20,8 +20,8 @@
                     <a href="<?php echo home_url(); ?>"><?php bloginfo("name"); ?></a></h1>
                     <div class="glheader__sub">
                         <ul>
-                          <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                          <li><a href="">LogIn</a></li>
+                          <li><a href="usces-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                          <li><a href="usces-member">LogIn</a></li>
                         </ul>
                       </div>
             </div>

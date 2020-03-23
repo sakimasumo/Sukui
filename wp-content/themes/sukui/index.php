@@ -9,7 +9,7 @@
     <main>
       <!-- about -->
       <h2 class="container about fadein">
-        <a href="about.html">
+        <a href="<?php echo home_url('/about') ?>">
           <img src="<?= get_template_directory_uri(); ?>/images/aboutlink.jpg" alt="" />
         </a>
       </h2>
@@ -19,8 +19,9 @@
           <img src="<?= get_template_directory_uri(); ?>/images/pickup-s.png" alt="" />
         </h2>
         <ul class="pickup__list">
-          <li class="pickup__item1"></li>
-          <li class="pickup__item2">banner</li>
+          <li class="pickup__item1"><a href=""><img src="<?= get_template_directory_uri(); ?>/images/banner1.jpg" alt="" /></a></li>
+          <li class="pickup__item2"><a href=""><img src="<?= get_template_directory_uri(); ?>/images/banner2.jpg" alt="" /></a>    
+        </li>
         </ul>
       </section>
       <!-- products -->
@@ -30,17 +31,17 @@
         </h2>
         <ul class="products__list">
           <li class="products__item">
-            <a href="store.html#skincare"
+            <a href="<?php echo home_url('/store') ?>#skincare"
               ><img src="<?= get_template_directory_uri(); ?>/images/skincarelink.jpg" alt=""
             /></a>
           </li>
           <li class="products__item">
-            <a href="store.html#basemake"
+            <a href="<?php echo home_url('/store') ?>#basemake"
               ><img src="<?= get_template_directory_uri(); ?>/images/basemakelink.jpg" alt=""
             /></a>
           </li>
           <li class="products__item">
-            <a href="store.html#pointmake"
+            <a href="<?php echo home_url('/store') ?>#pointmake"
               ><img src="<?= get_template_directory_uri(); ?>/images/pointmakelink.jpg" alt=""
             /></a>
           </li>
@@ -92,7 +93,7 @@
                 ?>
                 <?php if ($customPosts): ?>
                     <?php foreach ($customPosts as $post): setup_postdata($post);?>
-          <a href="product/<?= post_custom('url')?>">
+          <a href="<?= post_custom('url')?>">
             <li class="rank__item">
             <?php the_post_thumbnail('ranking_img'); ?>
             <div class="rank__num"><span><?= post_custom('ranknum'); ?></span></div>

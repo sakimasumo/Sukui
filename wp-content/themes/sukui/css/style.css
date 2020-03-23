@@ -292,17 +292,13 @@ footer {
   margin-bottom: 120px;
 }
 
-.pickup__item1, .pickup__item2 {
+.pickup__item1 img, .pickup__item2 img {
   width: 535px;
   height: 260px;
-  border: solid 1px #c2c2c2;
-}
-
-.pickup__item1 {
-  background-image: url(../images/banner1.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .products {
@@ -389,7 +385,7 @@ footer {
 .news__box {
   position: relative;
   border: 1px solid #c2c2c2;
-  height: 160px;
+  height: 150px;
   margin-bottom: 120px;
   padding: 30px 0 0 0;
 }
@@ -403,21 +399,21 @@ footer {
   float: left;
   height: 30px;
   width: 100px;
-  font-size: 2.0rem;
+  font-size: 1.6rem;
   color: #222222;
 }
 
 .news__contents {
   margin-left: 200px;
   height: 30px;
-  margin-bottom: 20px;
-  font-size: 2.0rem;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
   color: #222222;
 }
 
 .news__button {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 30px;
 }
 
@@ -762,7 +758,6 @@ footer {
 .storebox {
   color: #222222;
   font-weight: normal;
-  padding-top: 60px;
 }
 
 .storebox__title {
@@ -811,17 +806,17 @@ footer {
 }
 
 .storebox__item__name {
-  height: 25px;
+  height: 20px;
   text-align: center;
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   font-weight: normal;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 .storebox__item__price {
-  height: 40px;
+  height: 35px;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: normal;
 }
 
@@ -896,7 +891,7 @@ footer {
   margin-bottom: 15px;
 }
 
-.singleitemimg, .notsingleitemimg {
+.singleimgitem, .notsingleitemimg {
   margin-bottom: 40px;
 }
 
@@ -909,7 +904,7 @@ footer {
 }
 
 .shopbox__item {
-  color: #222222;
+  color: #777777;
   font-size: 1.6rem;
   padding-top: 10px;
   height: 40px;
@@ -991,7 +986,7 @@ footer {
 .cssacc:checked + label + .accshow {
   height: auto;
   padding: 5px;
-  background: #FFF4F4;
+  background: #fff;
   opacity: 1;
 }
 
@@ -1039,10 +1034,11 @@ footer {
 .contactbox__label::after {
   content: "必須";
   margin-left: 20px;
-  font-size: 1.2rem;
+  margin-bottom: 3px;
+  font-size: 1.0rem;
   background-color: #DB848D;
   border-radius: 2px;
-  padding: 0 2px;
+  padding: 0 5px 1px;
   color: #fff;
 }
 
@@ -1229,5 +1225,12 @@ footer {
 
 .contactconf__toplink a {
   color: #DB848D;
+}
+
+.post h1 {
+  height: 40px;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: normal;
 }
 /*# sourceMappingURL=style.css.map */

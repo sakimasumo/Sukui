@@ -9,13 +9,12 @@ get_header();
 
 <?php usces_delivery_info_script(); ?>
 <div id="content" class="two-column">
-<div class="catbox">
+<div class="catbox container">
 
 <?php if (have_posts()) : usces_remove_filter(); ?>
 
 	<div class="post" id="wc_<?php usces_page_name(); ?>">
 
-		<h1 class="cart_page_title"><?php _e('Shipping / Payment options', 'usces'); ?></h1>
 		<div class="entry">
 
 			<div id="delivery-info">
@@ -86,7 +85,7 @@ get_header();
 				</table>
 
 				<div class="send"><input name="offer[cus_id]" type="hidden" value="" />
-				<input name="backCustomer" type="submit" class="back_to_customer_button" value="<?php _e('Back', 'usces'); ?>"<?php echo apply_filters('usces_filter_deliveryinfo_prebutton', NULL); ?> />  
+				<input name="backCustomer" type="submit" class="back_to_customer_button" value="<?php _e('Back', 'usces'); ?>"<?php echo apply_filters('usces_filter_deliveryinfo_prebutton', NULL); ?> />
 				<input name="confirm" type="submit" class="to_confirm_button" value="<?php _e(' Next ', 'usces'); ?>"<?php echo apply_filters('usces_filter_deliveryinfo_nextbutton', NULL); ?> /></div>
 				<?php do_action('usces_action_delivery_page_inform'); ?>
 				</form>
@@ -104,6 +103,5 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'cartmember' ); ?>
 
 <?php get_footer(); ?>

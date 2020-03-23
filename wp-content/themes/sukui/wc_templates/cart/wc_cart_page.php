@@ -8,13 +8,12 @@ get_header();
 ?>
 
 <div id="content" class="two-column">
-<div class="catbox">
+<div class="catbox container">
 
 <?php if (have_posts()) : usces_remove_filter(); ?>
 
 	<div class="post" id="wc_<?php usces_page_name(); ?>">
 
-	<h1 class="cart_page_title"><?php _e('In the cart', 'usces'); ?></h1>
 		<div class="entry">
 
 			<div id="inside-cart">
@@ -62,7 +61,6 @@ get_header();
 						</tr>
 						</tfoot>
 					</table>
-					<div class="currency_code"><?php _e('Currency','usces'); ?> : <?php usces_crcode(); ?></div>
 					<?php if( $usces_gp ) : ?>
 					<img src="<?php bloginfo('template_directory'); ?>/images/gp.gif" alt="<?php _e('Business package discount','usces'); ?>" /><br /><?php _e('The price with this mark applys to Business pack discount.','usces'); ?>
 					<?php endif; ?>
@@ -89,6 +87,5 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'cartmember' ); ?>
 
 <?php get_footer(); ?>

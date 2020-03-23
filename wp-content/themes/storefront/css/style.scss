@@ -1,0 +1,987 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+
+
+$main:#eac7c4;
+$acce:#DB848D;
+$line:#c2c2c2;
+$sub: #aeaeae;
+$text:#222222;
+$base:#FFF4F4;
+
+@mixin title {
+        border-radius: 3px;
+        background:$acce;
+        width: 250px;
+        height: 60px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 220px;
+        }
+}
+
+
+
+// 全体指定
+html {
+    background-color: #F7F9FA;
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.6em;
+}
+ul {
+    list-style: none;
+}
+a , a:visited{
+    text-decoration: none;
+    color: $text;
+  }
+
+.container {
+    width: 1100px;
+    margin:0 auto;
+}
+.fadein {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    width: 1100px;
+}
+
+// ヘッダー
+.header {
+
+    background-color: $base;
+}
+
+.glheader {
+    padding-top: 40px;
+    height: 100px;
+    &__title {
+        a{
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+        height: 40px;
+        text-indent: -9999px;
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        }
+    }
+    &__sub {
+        float: right;
+        ul {
+            display: flex;
+            a {
+                display: block;
+                text-align: center;
+                width: 50px;
+                height: 20px;
+                color: #fff;
+                font-weight: normal;
+                font-size: 1.6rem;
+                margin: 8px;
+                border-radius: 2px;
+                width: 50px;
+                background-color: $acce;
+                padding: 5px 20px;
+                box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	            transition: .3s;
+                }
+                i {
+                    display: block;
+                    font-size: 2.0rem;
+                }
+                a:hover {
+                    opacity: 0.5;
+                    box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+                    transform: translateY(-4px);
+                }
+            }
+        }
+
+    }
+
+.hnav {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        a {
+            width: 220px;
+            height: 50px;
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	        transition: .3s;
+            img {
+            width: 150px;
+            }
+            }
+        a:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	        transform: translateY(-4px);
+        }
+    }
+}
+// ヘッダー固定用
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, 0);
+}
+
+// トップ戻るボタン
+    .topbtn{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0.8;
+    transition: .3s;
+    &:hover {
+        transform: translateY(-4px);
+        opacity: .6;
+    }
+  }
+  .topbtn a{
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    color: $acce;
+    font-size: 6.4rem;
+  }
+
+
+// フッター
+footer {
+    clear: both;
+    height: 170px;
+    padding-top: 45px;
+    background-color: $sub;
+}
+.glfooter {
+    &__list {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        height: 25px;
+    }
+    &__item {
+        font-size: 1.3rem;
+        color: #fff;
+
+    }
+    &__copy {
+        color: #fff;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+///////////////
+//////////////
+
+// トップページ
+// トップイメージ
+.top {
+    height: 615px;
+    margin-bottom: 60px;
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 615px;
+        width: 1100px;
+        background-image: url(../images/hero2.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+    &__logo {
+        display: block;
+        img{
+        height: 80px;
+        }
+    }
+}
+
+
+// メインエリア
+// about
+.about {
+    height: 125px;
+    text-align: center;
+    margin-bottom: 80px;
+    img {
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	    transition: .3s;
+    }
+    img:hover {
+        opacity: 0.5;
+        box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+        transform: translateY(-4px);
+    }
+}
+
+// top-pickup
+.pickup {
+    border-top: 3px dotted $main;
+    padding-top: 40px;
+    &__title {
+        @include title
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
+    }
+    &__item1, &__item2 {
+        width: 535px;
+        height: 260px;
+        border: solid 1px $line;
+    }
+    &__item1 {
+        background-image: url(../images/banner1.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+}
+
+// top-products
+.products {
+    border-top: 3px dotted $main;
+    padding-top: 40px;
+    &__title {
+        @include title
+
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
+
+    }
+    &__item {
+        img{
+        width: 350px;
+        height: 100px;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	    transition: .3s;
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	        transform: translateY(-4px);
+        }
+        }
+    }
+}
+
+// top-news
+.news {
+    border-top: 3px dotted $main;
+    padding-top: 40px;
+    &__title {
+        @include title
+
+    }
+    &__box {
+        position: relative;
+        border: 1px solid $line;
+        height: 160px;
+        margin-bottom: 120px;
+        padding: 30px 0 0 0;
+    }
+    &__list {
+        width: 60%;
+        margin: 0 auto;
+        }
+    &__date {
+        float: left;
+        height: 30px;
+        width: 100px;
+        font-size: 2.0rem;
+        color: $text;
+
+    }
+    &__contents {
+        margin-left: 200px;
+        height: 30px;
+        margin-bottom: 20px;
+        font-size: 2.0rem;
+        color: $text;
+    }
+    &__button {
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        img{
+        float: right;
+        height: 30px;
+        border: 3px solid $acce;
+        border-radius: 5px;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	    transition: .3s;
+        &:hover{
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+        }
+    }
+}
+// top-ranking
+.rank {
+    border-top: 3px dotted $main;
+    padding-top: 40px;
+    &__title {
+        @include title
+
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+    }
+    &__item {
+
+        position: relative;
+        img{
+            border: solid 2px $line;
+            border-radius: 60% 70% 60% 70%;
+            width: 360px;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	        transition: .3s;
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+        }
+    }
+    &__num {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid 3px $main;
+        background-color: $main;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            color: $base;
+            font-size: 3.2rem;
+            font-weight: bold;
+        }
+
+
+    }
+    &__caption {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    &__price {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
+
+//////////////
+//////////////
+
+// 共通
+// パンくずリスト
+.breadcrumb {
+    height: 60px;
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__item {
+        margin-top: 20px;
+        margin-left: 15px;
+        font-size: 1.4rem;
+        letter-spacing: 5px;
+        color: $text;
+        a span {
+            text-decoration: underline;
+        }
+    }
+
+    }
+
+
+
+// タイトル部分
+.pagetop {
+    width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    height: 150px;
+    background-image: url(../images/logobase.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom: 60px;
+
+    &__logo {
+        img {
+        filter: drop-shadow(2px 2px 1px #fff                      );
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        }
+    }
+
+}
+// aboutページ
+// メインエリア
+.aboutbox {
+    margin: 0 auto;
+    height: 600px;
+    color: $text;
+    margin-bottom: 100px;
+    background-image: url(../images/aboutbox.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    &__title {
+        text-align: center;
+        padding-top: 120px;
+        margin-bottom: 50px;
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+    &__contents {
+        span {
+            display: block;
+            text-align: center;
+            letter-spacing: 5px;
+            line-height: 3.0rem;
+
+        }
+    }
+
+}
+// newsページ
+// メインエリア
+.newsbox {
+    color: $text;
+    border: 1px solid $line;
+    margin-bottom: 100px;
+    &__list {
+        padding: 60px 60px;
+    }
+    &__item {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        border-bottom: 1px dotted $acce;
+    }
+    &__img {
+        display: block;
+        background-color: $base;
+        margin-right: 50px;
+        img {
+            height: 150px;
+            width: 150px;
+        }
+    }
+    &__contents {
+        width: 600px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    &__date {
+        margin-right: 30px;
+    }
+    &__title {
+        height: 10px;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-size: 1.4rem;
+    }
+}
+
+.page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+    li {
+        background-color: $acce;
+        width: 30px;
+            height: 30px;
+        margin: 5px;
+        border: 1px solid $acce;
+
+        a{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: $base;
+        }
+        span {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    }
+}
+.current {
+    background-color: $base;
+    color: $acce;
+}
+// storeページ
+// メインエリア
+.storecategory {
+				margin-bottom: 40px;
+
+    &__title {
+        @include title
+
+    }
+    &__list {
+        display: flex;
+				justify-content: space-between;
+    }
+    &__item {
+        img{
+        width: 350px;
+        height: 100px;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	    transition: .3s;
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	        transform: translateY(-4px);
+        }
+        }
+    }
+}
+.storebox {
+    color: $text;
+    font-weight: normal;
+    &__title {
+        border-top: 1px solid $line;
+        font-size: 3.4rem;
+        img {
+            height: 70px;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+    &__item {
+        width: 360px;
+        &__link {
+            display: block;
+        }
+        img {
+            width: 360px;
+            height: 280px;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	        transition: .3s;
+            &:hover {
+                box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+            opacity: 0.5;
+            }
+            }
+        &__name {
+            height: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin: 5px 0 0 0;
+        }
+        &__price {
+            height: 35px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+}
+}
+
+
+//store-singleページ
+// メインエリア
+.storesinglebox {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.slider {
+    display: block;
+		width: 45%;
+
+}
+
+
+//商品詳細
+.detail {
+	color: $text;
+	width: 45%;
+	padding-top: 50px;
+    &__box {
+        margin: 90px 50px;
+    }
+    &__name {
+        font-weight: normal;
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    &__price {
+        font-weight: normal;
+        font-size: 2.0rem;
+        margin-bottom: 15px;
+    }
+    &__desc {
+        font-weight: normal;
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    &__select {
+        height: 30px;
+        margin-bottom: 15px;
+    }
+    &__num {
+        height: 40px;
+        width: 50px;
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+    }
+    &__cart {
+        width: 150px;
+        height: 50px;
+        font-size: 1.6rem;
+        background-color: $acce;
+        border: none;
+        color: #eee;
+        border: 1px solid #fff;
+    }
+}
+.item_name {
+	font-size: 2.4rem;
+	margin-bottom: 15px;
+}
+.singleimgitem, .notsingleitemimg {
+	margin-bottom: 40px;
+}
+
+
+
+// shoplistページ
+// メインエリア
+.shopbox {
+    margin-bottom: 80px;
+
+    &__list {
+        padding: 20px 70px;
+    }
+    &__item {
+        color: $text;
+        font-size: 1.6rem;
+        padding-top: 10px;
+        height: 40px;
+        dl {
+            display: flex;
+            justify-content: start;
+        }
+        &__name {
+            width: 300px;
+        }
+        &__address {
+            width: 550px;
+            p {
+                margin-bottom: 5px;
+            }
+        }
+        &__tel {
+            width: 280px;
+        }
+    }
+}
+//アコーディオンメニュー
+/*ボックス全体*/
+.accbox {
+    margin: 2em 0;
+    padding: 0;
+}
+/*ラベル*/
+.accbox label {
+    display: block;
+    margin: 1.5px 0;
+    padding : 13px 12px;
+    color: $base;
+    background: $acce;
+    font-size: 1.8rem;
+    cursor :pointer;
+    transition: all 0.8s;
+}
+/*アイコンを表示*/
+.accbox label:before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f101';
+    font-weight: 900;
+    padding-right: 8px;
+}
+/*ラベルホバー時*/
+.accbox label:hover {
+    opacity: 0.5;
+}
+/*チェックは隠す*/
+.accbox input {
+    display: none;
+}
+/*中身を非表示にしておく*/
+.accbox .accshow {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+/*クリックで中身表示*/
+.cssacc:checked + label + .accshow {
+    height: auto;
+    padding: 5px;
+    background: $base;
+    opacity: 1;
+}
+/*アイコンを入れ替える*/
+.cssacc:checked + label:before {
+    content: '\f103';
+}
+
+
+
+// contactページ
+// メインエリア
+.contactbox {
+    color: $text;
+    &__text {
+        letter-spacing: 0.4rem;
+        line-height: 2.0rem;
+        margin-bottom: 40px;
+    }
+    &__area {
+        border: 1px solid $line;
+        padding: 40px 230px;
+        margin-right:auto;
+        margin-left: auto;
+        margin-bottom: 80px;
+        }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 0 0;
+        width: 650px;
+        margin-right:auto;
+        margin-left: auto;
+    }
+
+    &__label {
+        width: 250px;
+        padding-right: 20px;
+    }
+    &__label::after {
+        content: "必須";
+        margin-left: 20px;
+        font-size: 1.2rem;
+        background-color:$acce;
+        border-radius: 2px;
+        padding: 0 2px;
+        color: #fff;
+    }
+    &__name, &__kana, &__tel, &__mail, &__content, &__tarea {
+        width: 600px;
+    }
+    &__name,&__kana {
+        display: flex;
+        justify-content: space-between;
+        input {
+            width: 50%;
+            padding: 0 5px;
+            border: 1px solid $line;
+            height: 30px;
+            font-size: 1.6rem;
+        }
+        input:first-child{
+            margin-right: 10px;
+        }
+    }
+    &__tel {
+        input {
+            width: 100%;
+            padding: 0 0 0 5px;
+            border: 1px solid $line;
+            height: 30px;
+            font-size: 1.6rem;
+        }
+    }
+    &__mail {
+        input {
+            width: 100%;
+            padding:0 0 0 5px;
+            border: 1px solid $line;
+            height: 30px;
+            font-size: 1.6rem;
+        }
+    }
+    &__content {
+        select {
+            width: 100%;
+            padding: 0 5px;
+            border: 1px solid $line;
+            height: 30px;
+            font-size: 1.6rem;
+        }
+    }
+    &__tarea {
+        padding: 0 5px;
+        border: 1px solid $line;
+        height: 100px;
+        font-size: 1.6rem;
+        }
+    &__confirm {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 200px;
+        text-align: center;
+        input {
+        width: 200px;
+        height: 50px;
+        font-size: 2.2rem;
+        background-color: $acce;
+        border: none;
+        color: #eee;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+        transition: .3s;
+        }
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+    }
+    &__warning {
+        color: red;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    }
+
+//contact-confirmページ
+//メインエリア
+.contactconf {
+    margin-top: 40px;
+    border: 1px solid $line;
+    padding: 80px 200px;
+    margin-bottom: 80px;
+
+    &__text {
+        color: $text;
+      letter-spacing: 0.2rem;
+      margin-bottom: 30px;
+    }
+    &__table {
+        border: 1px solid $line;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    &__topic {
+        color: $base;
+        font-weight: normal;
+        width: 200px;
+        padding: 10px;
+        vertical-align: top;
+        text-align:left;
+        border: 1px solid $line;
+        background-color: $acce;
+    }
+    &__content {
+        width: 250px;
+        padding: 10px;
+        border: 1px solid $line;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+    }
+    &__done {
+        margin: 0 5px;
+        width: 200px;
+        height: 50px;
+        font-size: 2.2rem;
+        background-color: $acce;
+        border: none;
+        color: #eee;
+        border: 1px solid $acce;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+        transition: .3s;
+        &:hover{
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+    }
+    &__return {
+        margin: 0 5px;
+        width: 200px;
+        height: 50px;
+        font-size: 2.2rem;
+        background-color: $base;
+        border: none;
+        color: $acce;
+        border: 1px solid $acce;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+        transition: .3s;
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+    }
+    &__toplink {
+        a{
+        color: $acce;
+        }
+    }
+}

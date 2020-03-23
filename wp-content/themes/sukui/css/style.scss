@@ -256,15 +256,12 @@ footer {
         margin-bottom: 120px;
     }
     &__item1, &__item2 {
+        img {
         width: 535px;
         height: 260px;
-        border: solid 1px $line;
-    }
-    &__item1 {
-        background-image: url(../images/banner1.jpg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 0 0;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+	    transition: .3s;
+        }
     }
 }
 
@@ -308,7 +305,7 @@ footer {
     &__box {
         position: relative;
         border: 1px solid $line;
-        height: 160px;
+        height: 150px;
         margin-bottom: 120px;
         padding: 30px 0 0 0;
     }
@@ -320,20 +317,20 @@ footer {
         float: left;
         height: 30px;
         width: 100px;
-        font-size: 2.0rem;
+        font-size: 1.6rem;
         color: $text;
 
     }
     &__contents {
         margin-left: 200px;
         height: 30px;
-        margin-bottom: 20px;
-        font-size: 2.0rem;
+        margin-bottom: 10px;
+        font-size: 1.6rem;
         color: $text;
     }
     &__button {
         position: absolute;
-        bottom: 10px;
+        bottom: 20px;
         right: 30px;
         img{
         float: right;
@@ -592,7 +589,6 @@ footer {
 .storebox {
     color: $text;
     font-weight: normal;
-    padding-top: 60px;
     &__title {
         border-top: 1px solid $line;
         font-size: 3.4rem;
@@ -623,16 +619,16 @@ footer {
             }
             }
         &__name {
-            height: 25px;
-            text-align: center;
-            font-size: 2.0rem;
-            font-weight: normal;
-            margin: 10px 0 0 0;
-        }
-        &__price {
-            height: 40px;
+            height: 20px;
             text-align: center;
             font-size: 1.8rem;
+            font-weight: normal;
+            margin: 5px 0 0 0;
+        }
+        &__price {
+            height: 35px;
+            text-align: center;
+            font-size: 1.5rem;
             font-weight: normal;
         }
 }
@@ -702,7 +698,7 @@ footer {
 	font-size: 2.4rem;
 	margin-bottom: 15px;
 }
-.singleitemimg, .notsingleitemimg {
+.singleimgitem, .notsingleitemimg {
 	margin-bottom: 40px;
 }
 
@@ -717,7 +713,7 @@ footer {
         padding: 20px 70px;
     }
     &__item {
-        color: $text;
+        color: #777777;
         font-size: 1.6rem;
         padding-top: 10px;
         height: 40px;
@@ -783,7 +779,7 @@ footer {
 .cssacc:checked + label + .accshow {
     height: auto;
     padding: 5px;
-    background: $base;
+    background: #fff;
     opacity: 1;
 }
 /*アイコンを入れ替える*/
@@ -825,10 +821,11 @@ footer {
     &__label::after {
         content: "必須";
         margin-left: 20px;
-        font-size: 1.2rem;
+        margin-bottom: 3px;
+        font-size: 1.0rem;
         background-color:$acce;
         border-radius: 2px;
-        padding: 0 2px;
+        padding: 0 5px 1px ;
         color: #fff;
     }
     &__name, &__kana, &__tel, &__mail, &__content, &__tarea {
@@ -984,5 +981,16 @@ footer {
         a{
         color: $acce;
         }
+    }
+}
+
+//メンバーページ
+
+.post {
+    h1{
+    height: 40px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: normal;
     }
 }

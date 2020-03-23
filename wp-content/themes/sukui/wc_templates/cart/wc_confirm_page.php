@@ -8,13 +8,12 @@ get_header();
 ?>
 
 <div id="content" class="two-column">
-<div class="catbox">
+<div class="catbox container">
 
 <?php if (have_posts()) : usces_remove_filter(); ?>
 
 <div class="post" id="wc_<?php usces_page_name(); ?>">
 
-<h1 class="cart_page_title"><?php _e('Confirmation', 'usces'); ?></h1>
 <div class="entry">
 
 <div id="info-confirm">

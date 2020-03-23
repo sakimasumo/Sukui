@@ -17,22 +17,22 @@ get_header();
 </section>
 <!-- メインエリア -->
 <main>
+	<!-- 個別商品ページ -->
 	<section class="container">
 		<div id="content" class="two-column">
 			<div class="catbox">
-
 				<?php if (have_posts()) : the_post(); ?>
-
 					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 						<div class="storycontent">
-
 							<?php usces_remove_filter(); ?>
 							<?php usces_the_item(); ?>
 
 							<div id="itempage" class="storesinglebox">
 								<div class="slider">
 									<div class="itemimg">
+										<!-- メイン写真 -->
 										<a href="<?php usces_the_itemImageURL(0); ?>" <?php echo apply_filters('usces_itemimg_anchor_rel', NULL); ?>><?php usces_the_itemImage(0, 432, 336, $post); ?></a>
+										<!-- サブ写真 -->
 										<div class="itemsubimg">
 											<?php $imageid = usces_get_itemSubImageNums(); ?>
 											<?php foreach ($imageid as $id) : ?>
@@ -41,6 +41,7 @@ get_header();
 										</div><!-- end of itemsubimg -->
 									</div>
 								</div>
+								<!-- 色選択なし -->
 								<div class="detail">
 									<?php if (usces_sku_num() === 1) : usces_have_skus(); ?>
 										<!--1SKU-->
@@ -91,6 +92,8 @@ get_header();
 										</form>
 										<?php do_action('usces_action_single_item_outform'); ?>
 								</div>
+
+								<!-- 色選択あり -->
 								<div>
 								<?php elseif (usces_sku_num() > 1) : usces_have_skus(); ?>
 									<!--some SKU-->

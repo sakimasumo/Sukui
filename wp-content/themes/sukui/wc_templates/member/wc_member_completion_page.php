@@ -14,10 +14,9 @@ get_header();
 
 	<div class="post" id="wc_<?php usces_page_name(); ?>">
 
-		<h1 class="member_page_title"><?php _e('Completion', 'usces'); ?></h1>
 		<div class="entry">
 
-			<div id="memberpages">
+			<div id="memberpages" class="container">
 
 				<div class="header_explanation">
 				<?php do_action('usces_action_membercompletion_page_header'); ?>
@@ -57,6 +56,5 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'other' ); ?>
 
 <?php get_footer(); ?>

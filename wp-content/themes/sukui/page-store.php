@@ -33,7 +33,7 @@ global $usces;
 	</section>
 
 
-	<section class="container storecategory start">
+	<section class="container storebox start">
 		<div id="content" class="three-column container">
 			<h2 class="storebox__title" id="skincare"><img src="<?= get_template_directory_uri(); ?>/images/skincare.png" alt=""></h2>
 			<div class="clearfix storebox__list">
@@ -43,8 +43,8 @@ global $usces;
 						usces_the_item(); ?>
 						<div class="thumbnail_box storebox__item">
 							<div class="thumimg"><a href="<?php the_permalink() ?>"><?php usces_the_itemImage(0, 360, 280); ?></a></div>
-							<div class="thumtitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?> (<?php usces_the_itemCode(); ?>)</a></div>
-							<div class="price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
+							<div class="thumtitle storebox__item__name"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?></a></div>
+							<div class="price storebox__item__price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
 						</div>
 					<?php endwhile; ?>
 				<?php else : ?>
@@ -58,7 +58,7 @@ global $usces;
 	</section>
 
 
-	<section class="container storecategory start">
+	<section class="container storebox start">
 		<div id="content" class="three-column container">
 			<h2 class="storebox__title" id="basemake"><img src="<?= get_template_directory_uri(); ?>/images/basemake.png" alt=""></h2>
 			<div class="clearfix storebox__list">
@@ -68,8 +68,8 @@ global $usces;
 						usces_the_item(); ?>
 						<div class="thumbnail_box storebox__item">
 							<div class="thumimg"><a href="<?php the_permalink() ?>"><?php usces_the_itemImage(0, 360, 280); ?></a></div>
-							<div class="thumtitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?> (<?php usces_the_itemCode(); ?>)</a></div>
-							<div class="price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
+							<div class="thumtitle storebox__item__name"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?></a></div>
+							<div class="price storebox__item__price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
 						</div>
 					<?php endwhile; ?>
 				<?php else : ?>
@@ -81,7 +81,7 @@ global $usces;
 
 		</div><!-- end of content -->
 	</section>
-	<section class="container storecategory start">
+	<section class="container storebox start">
 		<div id="content" class="three-column container">
 			<h2 class="storebox__title" id="pointmake"><img src="<?= get_template_directory_uri(); ?>/images/pointmake.png" alt=""></h2>
 			<div class="clearfix storebox__list">
@@ -91,8 +91,8 @@ global $usces;
 						usces_the_item(); ?>
 						<div class="thumbnail_box storebox__item">
 							<div class="thumimg"><a href="<?php the_permalink() ?>"><?php usces_the_itemImage(0, 360, 280); ?></a></div>
-							<div class="thumtitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?> (<?php usces_the_itemCode(); ?>)</a></div>
-							<div class="price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
+							<div class="thumtitle storebox__item__name"><a href="<?php the_permalink() ?>" rel="bookmark"><?php usces_the_itemName(); ?></a></div>
+							<div class="price storebox__item__price"><?php usces_crform(usces_the_firstPrice('return'), true, false); ?><?php usces_guid_tax(); ?></div>
 						</div>
 					<?php endwhile; ?>
 				<?php else : ?>

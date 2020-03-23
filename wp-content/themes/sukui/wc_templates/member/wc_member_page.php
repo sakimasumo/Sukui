@@ -14,10 +14,9 @@ get_header();
 
 	<div class="post" id="wc_<?php usces_page_name(); ?>">
 
-		<h1 class="member_page_title"><?php _e('Membership', 'usces'); ?></h1>
 		<div class="entry">
 
-			<div id="memberpages">
+			<div id="memberpages" class="container">
 
 				<div class="whitebox">
 					<div id="memberinfo">
@@ -105,6 +104,5 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'cartmember' ); ?>
 
 <?php get_footer(); ?>
