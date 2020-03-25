@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/reset.css">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/mobile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script  type="text/javascript" src="<?= get_template_directory_uri(); ?>/js/main.js"></script>
 <?php wp_head(); ?>
 </head>
 <body>
     <!-- ヘッダー -->
-    <header>
+    <header class="mobilecontainer">
         <div class="header">
-            <div class="container glheader">
+            <div class="glheader">
                 <h1 class="glheader__title">
                     <a href="<?php echo home_url(); ?>"><?php bloginfo("name"); ?></a></h1>
                     <div class="glheader__sub">
@@ -26,12 +27,17 @@
                       </div>
             </div>
         </div>
-        <nav class="container hnav articles-scroll">
-        <?php wp_nav_menu( array ( 
+				<div class="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>menu</span>
+        </div>
+        <nav class="hnav globalMenuSp articles-scroll">
+        <?php wp_nav_menu( array (
           "menu" => "mainnav",
           'container' => false,
-          "menu_class" => "hnav__list"
+          "menu_class" => "hnav__list container"
           ) ); ?>
           </nav>
     </header>
-    

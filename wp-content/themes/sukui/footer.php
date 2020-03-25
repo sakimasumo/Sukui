@@ -1,5 +1,5 @@
 <!-- フッター -->
-<footer>
+<footer class="mobilecontainer">
             <div class="container glfooter">
                 <ul class="glfooter__list">
                     <li class="glfooter__item">プライバシーポリシー</li>

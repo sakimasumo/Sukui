@@ -1,0 +1,497 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+
+
+$main:#eac7c4;
+$acce:#DB848D;
+$line:#c2c2c2;
+$sub: #aeaeae;
+$text:#222222;
+$base:#FFF4F4;
+
+@media screen and (max-width: 768px) {
+
+html, .container {
+    width: 100%;
+}
+
+.glheader {
+    padding-bottom: 10px;
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__sub {
+        float: none;
+        ul {
+            justify-content: center;
+        }
+    }
+}
+
+// ハンバーガーメニュー用
+    .globalMenuSp {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        color: #000;
+        transition: all 0.5s;
+        width: 100%;
+        transform: translateX(-100%);
+
+        ul {
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+
+            background-color: transparent;
+
+            li {
+                margin: 0;
+                display: inline-flex;
+                align-items: center;
+                height: 40px;
+                padding: 10px 0;
+                width: 100%;
+
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+
+                a {
+                    display: block;
+
+                    img {
+                        padding-left: 30px;
+                        padding-right: 10px;
+                        padding-top: 10px;
+                        text-align: center;
+                    }
+
+                    p {
+                        line-height: 1.8rem;
+                        font-size: 0.8rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+
+
+
+    nav.globalMenuSp.active {
+        transform: translate(0%);
+    }
+
+    .navToggle {
+        display: block;
+        position: fixed;
+        /* bodyに対しての絶対位置指定 */
+        right: 13px;
+        top: 12px;
+        width: 60px;
+        height: 52px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 3;
+        background: $acce;
+        text-align: center;
+        border: 1px solid #fff;
+
+        span {
+            background-repeat: repeat-x;
+            display: block;
+            position: absolute;
+            /* .navToggleに対して */
+            width: 46px;
+            border-bottom: solid 3px #fff;
+            -webkit-transition: .35s ease-in-out;
+            -moz-transition: .35s ease-in-out;
+            transition: .35s ease-in-out;
+            left: 6px;
+        }
+    }
+
+
+    .navToggle span:nth-child(1) {
+        top: 9px;
+    }
+
+    .navToggle span:nth-child(2) {
+        top: 18px;
+    }
+
+    .navToggle span:nth-child(3) {
+        top: 27px;
+    }
+
+    .navToggle span:nth-child(4) {
+        border: none;
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: bold;
+        top: 34px;
+    }
+
+    /*タップした後*/
+    .navToggle.active span:nth-child(1) {
+        top: 18px;
+        left: 6px;
+        transform: rotate(-45deg);
+    }
+
+    .navToggle.active span:nth-child(2),
+    .navToggle.active span:nth-child(3) {
+        top: 18px;
+        transform: rotate(45deg);
+    }
+    //パンくず
+    .breadcrumb {
+        &__list {
+            width: 100%;
+        }
+        &__item:first-child {
+            width: 70px;
+        }
+        a {
+            width: 50px;
+        }
+    }
+    // トップイメージ
+    .top {
+        margin-bottom: 20px;
+        height: 230px;
+        &__img {
+            width: 100%;
+            height: 230px;
+        }
+        &__logo {
+            img {
+                width: 180px;
+                height: auto;
+            }
+        }
+    }
+    // about
+    .about {
+        text-align: center;
+        margin-bottom: 30px;
+        a {
+            display: block;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+        transition: .3s;
+        background-image: url(../images/aboutlinkbase.jpg);
+        height: 100px;
+        &:hover {
+            opacity: 0.5;
+            box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+            transform: translateY(-4px);
+        }
+        ul li {
+        font-size: 1.2rem;
+        }
+        }
+        img {
+            margin-top: 25px;
+            width: 50%;
+        }
+        
+    }
+    // pickup
+    .pickup {
+        &__list {
+            display: block;
+            margin-bottom: 30px;
+        }
+        &__item1, &__item2 {
+            width: 100%;
+            a img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    // product
+    .products {
+        &__list {
+            display: block;
+            margin-bottom: 30px;
+        }
+        &__item {
+            width: 100%;
+            a img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    //news 
+
+    .news {
+        &__box {
+            height: 290px;
+            margin-bottom: 30px;
+        }
+        &__date {
+            float: none;
+            height: 20px;
+        }
+        &__contents {
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
+    }
+    // rank
+    .rank {
+        &__list {
+            display: block;
+        }
+        &__item {
+            width: 80%;
+            
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: 80%;
+            }
+        }
+        &__price {
+            margin-bottom: 10px;
+        }
+    }
+    //footer 
+    .glfooter {
+        &__list {
+            display: block;
+            height: 80px;
+        }
+        &__item {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        &__copy {
+            padding-top: 10px;
+        }
+    }
+    .pagetop {
+        background-image:none;
+        height: 120px;
+        width: 98%;
+        margin:0 auto;
+        &__logo { 
+            img {
+                width: 100%;
+                position: absolute;
+                left: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .aboutページ
+    .aboutbox {
+        height: 800px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    // .newsページ
+    .newsbox {
+        height: auto;
+        margin-bottom: 40px;
+        width: 100%;
+        &__list {
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        &__item {
+            height: 230px;
+
+        }
+        &__img {
+            width: 90px;
+            height: 90px;
+            margin: 0;
+            margin-right: 10px;
+            img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        &__contents {
+            display: block;
+        }
+        &__date {
+            margin-bottom: 5px;
+        }
+        &__title {
+            height: 45px;
+            margin-bottom: 5px;
+        }
+        }
+    
+        // .storeページ
+    .storecategory {
+        margin-bottom: 40px;
+        width: 100%;
+        &__list {
+            display: block;
+        }
+        &__item {
+            img {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .storesinglebox {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+    .slider {
+        width: 100%;
+    }
+    .detail {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .itemsubimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .skubutton {
+        height: 20px;
+        font-size: 1rem;
+    }
+    td.price {
+        height: 25px;
+    }
+    .singleimgitem, .notsingleitemimg {
+        width: 100%;
+        margin-bottom: 10px;
+        p {
+            height: 50px;
+            overflow-wrap: break-word;
+        }
+    }
+    .ucart {
+        height: 32px;
+        padding-top: 15px;
+        font-size: 1.2rem;
+    }
+    #cart .upbutton { 
+        padding: 0;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        input {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+    #cart table {
+        border:none;
+    }
+    #cart table#cart_table {
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 10px;
+        display: block;
+        thead {
+            width: 100%;
+        }
+        
+    }
+    #cart td {
+        padding: 0;
+    }
+    #cart th {
+        padding: 0;
+        font-size: 0.7rem;
+    }
+    #cart .num {
+        white-space: nowrap;
+        width: 10px;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    #cart .thumbnail {
+        white-space: nowrap;
+        width: 70px;
+        text-align: center;
+    }
+    #cart td.productname {
+        width: 120px;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        text-align: left;
+    }
+    #cart .price,
+#cart .unitprice {
+	white-space: nowrap;
+    font-size: 1.2rem;
+	text-align: right;
+}
+#cart .quantity {
+	white-space: nowrap;
+    font-size: 1.2rem;
+	text-align: center;
+}
+    #cart .subtotal {
+        white-space: nowrap;
+        font-size: 1.2rem;
+        text-align: right;
+    }
+    #cart .stock {
+        white-space: nowrap;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    #cart .action {
+        white-space: nowrap;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+
+    // shoplistページ
+    .shopbox {
+        margin-bottom: 40px;
+        &__list {
+            padding: 10px;
+        }
+        &__item {
+            height: 80px;
+            font-size: 1.2rem;
+
+        }
+    }
+    // contactページ
+    .contactbox {
+        &__area {
+            padding: 30px 10px;
+        }
+        &__list, &__name, &__kana {
+            display: block;
+        }
+        &__label {
+            margin-bottom: 10px;
+        }
+        &__tel, &__mail, &__content, &__tarea {
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

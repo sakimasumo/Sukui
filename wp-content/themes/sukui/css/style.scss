@@ -59,7 +59,9 @@ a , a:visited{
 
     background-color: $base;
 }
-
+.navToggle {
+	display: none;
+}
 .glheader {
     padding-top: 40px;
     height: 100px;
@@ -229,19 +231,26 @@ footer {
 // メインエリア
 // about
 .about {
-    height: 125px;
     text-align: center;
     margin-bottom: 80px;
-    img {
-        box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
-	    transition: .3s;
-    }
-    img:hover {
+    a {
+        display: block;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.15);
+    transition: .3s;
+    background-image: url(../images/aboutlinkbase.jpg);
+    height: 100px;
+    &:hover {
         opacity: 0.5;
         box-shadow: 0 3px 10px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
         transform: translateY(-4px);
-    }
 }
+    }
+    img {
+        margin-top: 10px;
+    }
+    
+}
+
 
 // top-pickup
 .pickup {
@@ -702,8 +711,77 @@ footer {
 	margin-bottom: 40px;
 }
 
+#cart table#cart_table {
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 10px;
+}
+#cart .subtotal {
+	white-space: nowrap;
+	text-align: right;
+}
+#cart th,
+#cart td {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #FFFFFF;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	vertical-align: middle;
+	text-align: center;
+	white-space: normal;
+	word-break:break-all;
+}
+#cart th {
+	color: #FFFFFF;
+	background-color: #c2c2c2;
+	white-space: nowrap;
+	font-weight: normal;
+    font-size: 0.9em;
+}
+#cart .num {
+	white-space: nowrap;
+	text-align: center;
+}
+
+#cart .thumbnail {
+	white-space: nowrap;
+	text-align: center;
+}
+
+#cart .price,
+#cart .unitprice {
+	white-space: nowrap;
+	text-align: right;
+}
+
+#cart .quantity {
+	white-space: nowrap;
+	text-align: center;
+}
 
 
+
+#cart .stock {
+	white-space: nowrap;
+	text-align: center;
+}
+
+#cart .action {
+	white-space: nowrap;
+	text-align: center;
+}
 // shoplistページ
 // メインエリア
 .shopbox {

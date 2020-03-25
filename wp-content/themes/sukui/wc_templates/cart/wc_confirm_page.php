@@ -179,6 +179,4 @@ get_header();
 </div><!-- end of catbox -->
 </div><!-- end of content -->
 
-<?php get_sidebar( 'cartmember' ); ?>
-
 <?php get_footer(); ?>

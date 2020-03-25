@@ -17,8 +17,10 @@ add_theme_support('post-thumbnails');
  * 画像サイズの登録
  */
 add_image_size('ranking_img',360,280,true);
+add_image_size('pickup_img',535,260,true);
 
-/** 
+
+/**
 * カスタム投稿タイプ（新着情報）の登録
 */
 register_post_type(
@@ -28,6 +30,21 @@ register_post_type(
  'name' => 'お知らせ',
  'add_new_item' => 'お知らせの追加',
  'edit_item' => 'お知らせの編集'
+ ),
+ 'public' => true,
+ 'supports' => array('title', 'editor', 'thumbnail')
+ )
+);
+/**
+* カスタム投稿タイプ（ピックアップ）の登録
+*/
+register_post_type(
+ 'pickup',
+ array(
+ 'labels' => array(
+ 'name' => 'ピックアップバナー',
+ 'add_new_item' => 'ピックアップバナーの追加',
+ 'edit_item' => ' の編集'
  ),
  'public' => true,
  'supports' => array('title', 'editor', 'thumbnail')
@@ -86,7 +103,7 @@ register_taxonomy(
 
 
 }
- 
+
 add_action('init', 'create_list');
 
 function create_list(){
@@ -122,7 +139,7 @@ register_taxonomy(
 
 
 }
- 
+
 
 add_filter('redirect_canonical','my_disable_redirect_canonical');
 
@@ -137,9 +154,3 @@ function my_disable_redirect_canonical( $redirect_url) {
         }
     }
 }
-
-
-
-
-
-    

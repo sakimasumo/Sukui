@@ -19,7 +19,7 @@ $('.fadein').each(function() {
     var targetElement = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll > targetElement - windowHeight + 100) {
+    if (scroll > targetElement - windowHeight + 80) {
         $(this).css('opacity', '1');
         $(this).css('transform', 'translateY(0)');
     }
@@ -32,7 +32,7 @@ jQuery(function() {
     var pagetop = $('.topbtn');
     pagetop.hide();
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 700) { //700pxスクロールしたら表示
+        if ($(this).scrollTop() > 500) { //500pxスクロールしたら表示
             pagetop.fadeIn();
         } else {
             pagetop.fadeOut();
@@ -69,4 +69,16 @@ jQuery(function() {
             $('body,html').animate({ scrollTop: position }, speed, 'swing');
             return false;
         });
-    });
+		});
+// ハンバーガーメニュー
+$(function () {
+	$('.navToggle').click(function () {
+		$(this).toggleClass('active');
+
+		if ($(this).hasClass('active')) {
+			$('.globalMenuSp').addClass('active');
+		} else {
+			$('.globalMenuSp').removeClass('active');
+		}
+	});
+});
